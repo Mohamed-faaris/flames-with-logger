@@ -80,5 +80,5 @@ function calculate_flames(event)
     var name_1 = document.getElementById('name_1').value.toLowerCase().replace(/\s+/g, '');
     var name_2 = document.getElementById('name_2').value.toLowerCase().replace(/\s+/g, '');
     var number = no_of_unique_characters(name_1,name_2);
-    result.innerText = "result: "+relation(calculate_flames_by_number("flames",number,0));
+    result.innerText = "Result: "+relation(calculate_flames_by_number("flames",number,0));
 }
