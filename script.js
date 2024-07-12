@@ -29,9 +29,9 @@ function calculate_flames_by_number(str,number,start)
     {
         return str;
     }
-    var index = (number+start)%str.length;
+    var index = (number+start-1)%str.length;
     str = remove_character_at_index(str,index);
-    start = (str.length+index-1)%str.length;
+    start = (index)%str.length;
     return calculate_flames_by_number(str,number,start);
 }
 
@@ -63,7 +63,7 @@ function relation(character){
     
     else if(character == "s")
         {
-            return "friends";
+            return "sibling";
         }
     
     else
