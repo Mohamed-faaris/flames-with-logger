@@ -1,13 +1,5 @@
 #result
 {
-    font-size: 1.25rem;
-    font-weight: 450;
-    font-family: monospace;
+    font-size: larger;
 }
 
-
-html{
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-}
