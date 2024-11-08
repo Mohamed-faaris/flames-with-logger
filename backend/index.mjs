@@ -40,11 +40,10 @@ async function connectToDatabase() {
 } 
 
 app.post("/store",async(req,res)=>{
-    console.log("hello")
     try{
         console.log(req.body);
         await new Pair(req.body).save()
-        return res.status(200).send("OK")
+        return res.status(200).send({msg:"OK"})
     }
     catch(error){
         return res.status(400).send(error)

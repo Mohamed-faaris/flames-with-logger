@@ -91,7 +91,7 @@ function logger(name1,name2,relation){
           if (!response.ok) {
             console.log(`HTTP error! Status: ${response.status}`);
           }
-          return response.json(); // or response.text() if you expect a plain text response
+          return response.json(); 
         })
         .then(data => {
           console.log('Response:', data);
@@ -102,6 +102,9 @@ function logger(name1,name2,relation){
       
 }
 
+var oldName_1 = '';
+var oldName_2 = '';
+
 function calculate_flames(event)
 {
     event.preventDefault();
@@ -111,5 +114,11 @@ function calculate_flames(event)
     var number = no_of_unique_characters(name_1,name_2);
     var relation = findRelation(calculate_flames_by_number("flames",number,0))
     result.innerText = "result: "+ relation;
-    logger(name_1,name_2,relation)
+    if((oldName_1!=name_1 || oldName_2 != name_2) && name_1 != name_2){
+        console.log(oldName_1,",",oldName_2,",",name_1,",",name_2)
+        logger(name_1,name_2,relation)
+        oldName_1 = name_1
+        oldName_2 = name_2
+        console.log(oldName_1,",",oldName_2,",",name_1,",",name_2)
+    }
 }
