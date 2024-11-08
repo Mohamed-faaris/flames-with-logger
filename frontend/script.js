@@ -35,7 +35,7 @@ function calculate_flames_by_number(str,number,start)
     return calculate_flames_by_number(str,number,start);
 }
 
-function relation(character){
+function findRelation(character){
     if(character == "f")
         {
             return "friends";
@@ -73,6 +73,35 @@ function relation(character){
     }
 }
 
+function logger(name1,name2,relation){
+    const data = {
+        'name1': name1,
+        'name2': name2,
+        'relation': relation
+      };
+      
+      fetch('http://localhost:3000/store', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      })
+        .then(response => {
+          if (!response.ok) {
+            console.log(`HTTP error! Status: ${response.status}`);
+          }
+          return response.json(); // or response.text() if you expect a plain text response
+        })
+        .then(data => {
+          console.log('Response:', data);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      
+}
+
 function calculate_flames(event)
 {
     event.preventDefault();
@@ -80,5 +109,7 @@ function calculate_flames(event)
     var name_1 = document.getElementById('name_1').value.toLowerCase().replace(/\s+/g, '');
     var name_2 = document.getElementById('name_2').value.toLowerCase().replace(/\s+/g, '');
     var number = no_of_unique_characters(name_1,name_2);
-    result.innerText = "result: "+relation(calculate_flames_by_number("flames",number,0));
+    var relation = findRelation(calculate_flames_by_number("flames",number,0))
+    result.innerText = "result: "+ relation;
+    logger(name_1,name_2,relation)
 }
