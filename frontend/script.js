@@ -18,13 +18,11 @@ function no_of_unique_characters(name_1,name_2)
             i--;
         }
     }
-    console.log(name_1+'  '+name_2+" - infunction");
     return (name_1+name_2).length;
 }
 
 function calculate_flames_by_number(str,number,start)
 {
-    console.log(str,number,start);
     if(str.length<2)
     {
         return str;
@@ -53,7 +51,7 @@ function findRelation(character){
         
     else if(character == "m")
         {
-            return "mariage";
+            return "marriage";
         }
         
     else if(character == "e")
@@ -68,7 +66,6 @@ function findRelation(character){
     
     else
     {
-        console.log("relation: ",character);
         return "invalid";
     }
 }
@@ -93,9 +90,6 @@ function logger(name1,name2,relation){
           }
           return response.json(); 
         })
-        .then(data => {
-          console.log('Response:', data);
-        })
         .catch(error => {
           console.error('Error:', error);
         });
@@ -115,10 +109,8 @@ function calculate_flames(event)
     var relation = findRelation(calculate_flames_by_number("flames",number,0))
     result.innerText = "result: "+ relation;
     if((oldName_1!=name_1 || oldName_2 != name_2) && name_1 != name_2){
-        console.log(oldName_1,",",oldName_2,",",name_1,",",name_2)
         logger(name_1,name_2,relation)
         oldName_1 = name_1
         oldName_2 = name_2
-        console.log(oldName_1,",",oldName_2,",",name_1,",",name_2)
     }
 }
