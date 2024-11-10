@@ -77,7 +77,7 @@ function logger(name1,name2,relation){
         'relation': relation
       };
       
-      fetch('http://localhost:3000/store', {
+      fetch('https://flames-a246.onrender.com/store', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
