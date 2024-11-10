@@ -39,6 +39,10 @@ async function connectToDatabase() {
     }
 } 
 
+app.get("/",(res,req)=>{
+    return res.status(200).send({msg:"connected"})
+})
+
 app.post("/store",async(req,res)=>{
     try{
         console.log(req.body);
