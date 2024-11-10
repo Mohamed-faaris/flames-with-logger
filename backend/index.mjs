@@ -39,7 +39,7 @@ async function connectToDatabase() {
     }
 } 
 
-app.get("/",(res,req)=>{
+app.get("/",(req,res)=>{
     return res.status(200).send({msg:"connected"})
 })
 
