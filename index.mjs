@@ -48,7 +48,6 @@ app.get("/",(req,res)=>{
 
 app.post("/store",async(req,res)=>{
     try{
-        console.log(req.body);
         await new Pair(req.body).save()
         return res.status(200).send({msg:"OK"})
     }
