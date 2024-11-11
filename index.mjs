@@ -28,7 +28,7 @@ const pairSchema = Mongoose.Schema({
         type:String,
         required:true
     }
-})
+}, { versionKey: false })
 
 const Pair = Mongoose.model("pairs",pairSchema)
 
