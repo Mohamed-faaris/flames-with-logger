@@ -1,16 +1,19 @@
-import Dotenv from 'dotenv';
+import dotenv from 'dotenv';
 import Mongoose from 'mongoose';
 import express from 'express';
 import cors from 'cors';
+import path from 'path';
 
 const PORT = process.env.PORT||3000;
 
 const app = express()
 
-Dotenv.config()
+dotenv.config()
 
 app.use(express.json())
 app.use(cors())
+app.use(express.static(path.resolve("static")));
+
 
 const pairSchema = Mongoose.Schema({
     "name1":{
@@ -40,7 +43,7 @@ async function connectToDatabase() {
 } 
 
 app.get("/",(req,res)=>{
-    return res.status(200).send({msg:"connected"})
+    return res.status(200).sendFile(path.resolve("./static/index.html"))
 })
 
 app.post("/store",async(req,res)=>{
