@@ -1,6 +1,7 @@
 {
   "name": "Flames",
   "short_name": "Flames",
+  "description": "A simple game of flames",
   "icons": [
     {
       "src": "svg/android-chrome-192x192.png",
