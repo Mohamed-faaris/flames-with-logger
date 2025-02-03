@@ -17,5 +17,13 @@
   "theme_color": "#ffffff",
   "background_color": "#ffffff",
   "display": "fullscreen",
-  "start_url": "."
+  "start_url": ".",
+  "id": "Flames",
+  "orientation": "portrait",
+  "lang": "en",
+  "display_override": [
+    "standalone",
+    "fullscreen",
+    "window-controls-overlay"
+  ]
 }
