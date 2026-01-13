@@ -12,9 +12,13 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@capacitor/core": "^8.0.1",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.21.1",
     "mongoose": "^8.8.1"
+  },
+  "devDependencies": {
+    "@capacitor/cli": "^8.0.1"
   }
 }
