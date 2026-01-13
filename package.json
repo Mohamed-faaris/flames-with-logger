@@ -14,9 +14,9 @@
   "dependencies": {
     "@capacitor/core": "^8.0.1",
     "cors": "^2.8.5",
-    "dotenv": "^16.4.5",
-    "express": "^4.21.1",
-    "mongoose": "^8.8.1"
+    "dotenv": "^16.6.1",
+    "express": "^4.22.1",
+    "mongoose": "^8.21.0"
   },
   "devDependencies": {
     "@capacitor/cli": "^8.0.1"
